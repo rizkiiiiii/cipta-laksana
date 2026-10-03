@@ -8,6 +8,7 @@ services:
     environment:
       - APP_NAME="${APP_NAME:-Cita Laksana Mebel}"
       - APP_ENV="${APP_ENV:-production}"
+      - APP_KEY="${APP_KEY:-base64:YR9sdcmryv4F+p/jPLgok1gTRylnXanY6ehourLYjBQ=}"
       - APP_DEBUG="${APP_DEBUG:-false}"
       - APP_URL="${APP_URL:-https://citalaksana.noeronlabs.cloud}"
       - LOG_CHANNEL=stderr
@@ -16,9 +17,9 @@ services:
       - DB_CONNECTION=mysql
       - DB_HOST=db
       - DB_PORT=3306
-      - DB_DATABASE="${DB_DATABASE:-laravel}"
-      - DB_USERNAME="${DB_USERNAME:-laravel}"
-      - DB_PASSWORD="${DB_PASSWORD:-secret}"
+      - DB_DATABASE="${DB_DATABASE:-citalaksana}"
+      - DB_USERNAME="${DB_USERNAME:-citalaksana_user}"
+      - DB_PASSWORD="${DB_PASSWORD:-CitaLaksanaSecure2026!}"
       - SESSION_DRIVER=file
       - SESSION_LIFETIME=120
       - RUN_MIGRATIONS="${RUN_MIGRATIONS:-true}"
@@ -34,10 +35,10 @@ services:
   db:
     image: mysql:8.0
     environment:
-      - MYSQL_DATABASE="${DB_DATABASE:-laravel}"
-      - MYSQL_USER="${DB_USERNAME:-laravel}"
-      - MYSQL_PASSWORD="${DB_PASSWORD:-secret}"
-      - MYSQL_ROOT_PASSWORD="${DB_ROOT_PASSWORD:-rootsecret}"
+      - MYSQL_DATABASE="${DB_DATABASE:-citalaksana}"
+      - MYSQL_USER="${DB_USERNAME:-citalaksana_user}"
+      - MYSQL_PASSWORD="${DB_PASSWORD:-CitaLaksanaSecure2026!}"
+      - MYSQL_ROOT_PASSWORD="${DB_ROOT_PASSWORD:-RootSecureCitaLaksana2026!}"
     volumes:
       - dbdata:/var/lib/mysql
     networks:
