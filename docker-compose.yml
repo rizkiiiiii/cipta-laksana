@@ -6,24 +6,24 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      - APP_NAME="${APP_NAME:-Cita Laksana Mebel}"
-      - APP_ENV="${APP_ENV:-production}"
-      - APP_KEY="${APP_KEY:-base64:YR9sdcmryv4F+p/jPLgok1gTRylnXanY6ehourLYjBQ=}"
-      - APP_DEBUG="${APP_DEBUG:-false}"
-      - APP_URL="${APP_URL:-https://citalaksana.noeronlabs.cloud}"
+      - APP_NAME="Cita Laksana Mebel"
+      - APP_ENV=production
+      - APP_KEY=base64:YR9sdcmryv4F+p/jPLgok1gTRylnXanY6ehourLYjBQ=
+      - APP_DEBUG=false
+      - APP_URL=https://citalaksana.noeronlabs.cloud
       - LOG_CHANNEL=stderr
       - LOG_DEPRECATIONS_CHANNEL=null
       - LOG_LEVEL=info
       - DB_CONNECTION=mysql
       - DB_HOST=db
       - DB_PORT=3306
-      - DB_DATABASE="${DB_DATABASE:-citalaksana}"
-      - DB_USERNAME="${DB_USERNAME:-citalaksana_user}"
-      - DB_PASSWORD="${DB_PASSWORD:-CitaLaksanaSecure2026!}"
+      - DB_DATABASE=citalaksana
+      - DB_USERNAME=citalaksana_user
+      - DB_PASSWORD=CitaLaksanaSecure2026!
       - SESSION_DRIVER=file
       - SESSION_LIFETIME=120
-      - RUN_MIGRATIONS="${RUN_MIGRATIONS:-true}"
-      - RUN_SEEDERS="${RUN_SEEDERS:-true}"
+      - RUN_MIGRATIONS=true
+      - RUN_SEEDERS=true
     volumes:
       - ./storage/app/public:/var/www/html/storage/app/public
     depends_on:
@@ -35,10 +35,10 @@ services:
   db:
     image: mysql:8.0
     environment:
-      - MYSQL_DATABASE="${DB_DATABASE:-citalaksana}"
-      - MYSQL_USER="${DB_USERNAME:-citalaksana_user}"
-      - MYSQL_PASSWORD="${DB_PASSWORD:-CitaLaksanaSecure2026!}"
-      - MYSQL_ROOT_PASSWORD="${DB_ROOT_PASSWORD:-RootSecureCitaLaksana2026!}"
+      - MYSQL_DATABASE=citalaksana
+      - MYSQL_USER=citalaksana_user
+      - MYSQL_PASSWORD=CitaLaksanaSecure2026!
+      - MYSQL_ROOT_PASSWORD=RootSecureCitaLaksana2026!
     volumes:
       - dbdata:/var/lib/mysql
     networks:
